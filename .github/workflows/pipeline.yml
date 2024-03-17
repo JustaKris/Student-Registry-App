@@ -1,3 +1,5 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+
 name: Build and Test app
 
 on:
@@ -12,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x, 20.x]
+        node-version: [16.x, 18.x, 20.x]
     steps:
     - name: Checkout repo
       uses: actions/checkout@v3
@@ -25,3 +27,5 @@ jobs:
       run: npm install
     - name: Run integration tests
       run: npm test
+    - name: Run security tests
+      run: npm run test-npm-security
