@@ -6,6 +6,7 @@ setup(function() {
     {"name" : "Tina", "email" : "tina@yahoo.com"}
   ];
   const express = require('express');
+  const { suite, test } = require('mocha');
   const app = express();
   server = require('http').createServer(app);
   app.set('view engine', 'pug');
