@@ -1,13 +1,11 @@
 let server;
 
-setup(function() {
+before(function() {
   let students = [
     {"name" : "Steve", "email" : "steve@gmail.com"},
     {"name" : "Tina", "email" : "tina@yahoo.com"}
   ];
   const express = require('express');
-  const assert = require('assert');
-  const setup = require('./setup');
   const app = express();
   server = require('http').createServer(app);
   app.set('view engine', 'pug');
@@ -19,6 +17,6 @@ setup(function() {
   server.listen(8888);
 });
 
-teardown(function() {
+after(function() {
   server.close();
 });
