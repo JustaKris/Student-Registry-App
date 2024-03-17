@@ -7,6 +7,7 @@ setup(function() {
   ];
   const express = require('express');
   const assert = require('assert');
+  const setup = require('./setup');
   const app = express();
   server = require('http').createServer(app);
   app.set('view engine', 'pug');
