@@ -1,4 +1,5 @@
 const assert = require('assert');
+const { suite, test } = require('mocha');
 const fetch = require('node-fetch');
 
 suite('Add Students page', function() {
